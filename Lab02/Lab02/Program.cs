@@ -9,39 +9,42 @@ namespace Lab02
             Console.WriteLine("Welcome to the Grand Circus' Room Detail Generator!" + "\n");
 
             string userInput;
-            
- 
+
+
             do
             {
 
-            Console.Write("Enter Length: ");
-            var lengthInput = Console.ReadLine();
-            var newLength = double.Parse(lengthInput);
+                Console.Write("Enter Length: ");
+                var lengthInput = Console.ReadLine();
+                var newLength = double.Parse(lengthInput);
 
-            Console.Write("Enter Width: ");
-            var widthInput = Console.ReadLine();
-            var newWidth = double.Parse(widthInput);
+                Console.Write("Enter Width: ");
+                var widthInput = Console.ReadLine();
+                var newWidth = double.Parse(widthInput);
 
-            var area = newLength * newWidth; 
-            Console.Write($"Area: {area}" + "\n");
+                Console.Write("Enter Height: ");
+                var heightInput = Console.ReadLine();
+                var newHeight = double.Parse(heightInput);
 
-            var perimeter = 2 * (newLength + newWidth);
-            Console.Write($"Perimeter: {perimeter}" + "\n");
+                var area = newLength * newWidth;
+                Console.WriteLine($"Area: {area}");
 
-            var height = (area / newLength);
-            var volume = newLength * newWidth * height;
-            Console.Write($"Volume: {volume}" + "\n");
+                var perimeter = 2 * (newLength + newWidth);
+                Console.WriteLine($"Perimeter: {perimeter}");
 
-            var surfaceArea = 2 * (newLength * newWidth) + (height * newWidth) + (newLength * height);
-            Console.WriteLine($"Surface Area: {surfaceArea}" + "\n");
+                var volume = newLength * newWidth * newHeight;
+                Console.Write($"Volume: {volume}" + "\n");
+
+                var surfaceArea = 2 * (newLength * newWidth) + (newHeight * newWidth) + (newLength * newHeight);
+                Console.WriteLine($"Surface Area: {surfaceArea}" + "\n");
 
                 bool isInvalid;
 
                 do
                 {
-            Console.Write("Would you like to measure another room? (y/n): ");
-            userInput = Console.ReadLine();
-            isInvalid = userInput != "y" && userInput != "n";
+                    Console.Write("Would you like to measure another room? (y/n): " + "\n");
+                    userInput = Console.ReadLine();
+                    isInvalid = userInput != "y" && userInput != "n";
                     if (isInvalid)
                     {
                         Console.WriteLine("Error: You need to enter 'y' or 'n'!" + "\n");
@@ -51,7 +54,7 @@ namespace Lab02
 
             Console.WriteLine("Goodbye!");
 
-           
+
         }
     }
 }
